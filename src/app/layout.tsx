@@ -1,3 +1,4 @@
+import { UserProvider } from "@auth0/nextjs-auth0/client"
 import type { Metadata } from "next"
 import { Noto_Sans_JP } from "next/font/google"
 
@@ -21,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${notoSansJpFont.className} antialiased`}>
-        {children}
+        <UserProvider>{children}</UserProvider>
       </body>
     </html>
   )
